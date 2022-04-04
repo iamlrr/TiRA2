@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Uczen {
     private String imie;
@@ -41,6 +42,14 @@ public class Uczen {
 
     public void setKlasa(String klasa) {
         this.klasa = klasa;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Uczen uczen = (Uczen) o;
+        return Objects.equals(imie, uczen.imie) && Objects.equals(nazwisko, uczen.nazwisko) && Objects.equals(klasa, uczen.klasa);
     }
 
     @Override
